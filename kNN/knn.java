@@ -16,7 +16,7 @@ import weka.core.converters.ArffLoader;
  * @author Gowtham Girithar Srirangasamy
  *
  */
-public class KNNDemo {
+public class kNN {
 
     /**
      * This method is to load the data set.
@@ -25,6 +25,16 @@ public class KNNDemo {
      * @return
      * @throws IOException
      */
+
+    public static void main(String[] args) {
+        try {
+            process();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
     public static Instances getDataSet(String fileName) throws IOException {
         /**
          * we can set the file i.e., loader.setFile("finename") to load the data
@@ -33,7 +43,7 @@ public class KNNDemo {
         /** the arffloader to load the arff file */
         ArffLoader loader = new ArffLoader();
         /** load the traing data */
-        loader.setSource(KNNDemo.class.getResourceAsStream("/" + fileName));
+        loader.setSource(kNN.class.getResourceAsStream("/" + fileName));
         /**
          * we can also set the file like loader3.setFile(new
          * File("test-confused.arff"));

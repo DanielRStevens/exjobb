@@ -1,6 +1,5 @@
 
 from domain import Record
-
 import os
 import time
 import threading

@@ -6,7 +6,7 @@ import threading
 import signal
 from errno import ENOENT
 from subprocess import Popen
-from affinity import set_process_affinity_mask
+#from affinity import set_process_affinity_mask
 import psutil  # We're running this on Windows rather than Linux, so gtop isn't an option
 import pickle
 

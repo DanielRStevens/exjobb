@@ -9,7 +9,7 @@ def program(file, columns, class_column):
     import numpy as np
     from math import sqrt
     from sklearn.metrics import mean_squared_error
-    from sklearn.neighbors import KNeighborsRegressor
+    from sklearn.neighbors import KNeighborsClassifier
     from sklearn.preprocessing import LabelEncoder
     from sklearn.model_selection import train_test_split
 
@@ -24,7 +24,7 @@ def program(file, columns, class_column):
     # Training the model
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=0)
-    knn_model = KNeighborsRegressor(n_neighbors=3)
+    knn_model = KNeighborsClassifier(n_neighbors=3)
     knn_model.fit(X_train, y_train)
     # Evaluating
     train_preds = knn_model.predict(X_train)
@@ -48,8 +48,8 @@ for x in range(10):
     #        'petal_length', 'petal_width'], 'species')
     # program('WineQT.csv', ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
     #        'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol'], 'quality')
-    # program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
-    #                           'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
+    program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
+                               'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
     end_time = time.perf_counter_ns()
     execution_time.append(end_time - start_time)
     memory_usage.append(process_memory())

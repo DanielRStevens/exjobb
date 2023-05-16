@@ -2,14 +2,11 @@ package kNN;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.Arrays;
-import java.util.Enumeration;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.lazy.IBk;
-import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.CSVLoader;
 import weka.filters.Filter;
@@ -21,8 +18,6 @@ import weka.filters.unsupervised.attribute.Remove;
  * @author Gowtham Girithar Srirangasamy
  */
 public class kNN {
-
-
     public static void main(String[] args) {
         long[] execution_times = new long[10];
         long[] memory_usage = new long[10];
@@ -32,7 +27,7 @@ public class kNN {
                 //process("IRIS.csv", 4, new int[] {0,1,2,3,4});
                 //process("WineQT.csv", 10, new int[] {0,1,2,3,4,5,6,7,8,9,10});
                 //process("weatherAUS.csv", -1, new int[]{2, 3, 4, 5, 6, 8, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22});
-                process("Original_data_with_more_rows.csv", 0, new int[] {3,6,7,8});
+                process("Original_data_with_more_rows.csv", 0, new int[]{3, 6, 7, 8});
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -141,7 +136,6 @@ public class kNN {
         System.out.println(eval.toSummaryString());
         //System.out.println(eval.toClassDetailsString());
         //System.out.println(eval.toMatrixString());
-
     }
 
 }

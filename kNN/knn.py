@@ -46,9 +46,9 @@ for x in range(10):
     start_time = time.perf_counter_ns()
     # Uncomment the program you want to run.
     #program('./IRIS.csv',['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'species')
-    #program('WineQT.csv', ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
+    # program('WineQT.csv', ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
     #        'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol'], 'quality')
-    #program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
+    # program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
     #                           'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
     end_time = time.perf_counter_ns()
     mem_after = process_memory()

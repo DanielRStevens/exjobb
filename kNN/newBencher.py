@@ -15,8 +15,10 @@ def measure(arg, commandline, delay, maxtime,
             outFile=None, errFile=None, inFile=None, logger=None, affinitymask=None):
 
     r, w = os.pipe()
-    forkedPid = os.fork()
-
+    try:
+        forkedPid = os.fork()
+    except:
+        forkedPid = None
     if forkedPid:  # read pickled measurements from the pipe
         os.close(w)
         rPipe = os.fdopen(r)
@@ -121,8 +123,13 @@ def measure(arg, commandline, delay, maxtime,
                 m.setError()
 
         finally:
+            print(m)
             w.dump(m)
             wPipe.close()
 
             # Sample thread will be destroyed when the forked process _exits
             os._exit(0)
+
+
+print("Python - IRIS")
+measure(0, "py knn_iris.py", 0.1, 20)

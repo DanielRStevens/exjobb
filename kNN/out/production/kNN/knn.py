@@ -4,7 +4,7 @@ import os
 import psutil
 
 
-def program():
+def program(file, columns, class_column):
     import pandas as pd
     import numpy as np
     from math import sqrt
@@ -14,13 +14,13 @@ def program():
     from sklearn.model_selection import train_test_split
 
     # Importing the dataset
-    dataset = pd.read_csv('./IRIS.csv')
-    feature_columns = ['sepal_length', 'sepal_width',
-                       'petal_length', 'petal_width']
-    X = dataset[feature_columns].values
-    y = dataset['species'].values
+    dataset = pd.read_csv(file)
+    dataset = dataset.dropna(subset=columns)
+    X = dataset[columns].values
+    y = dataset[class_column].values
     le = LabelEncoder()
     y = le.fit_transform(y)
+    # Processing the dataset
     # Training the model
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=0)
@@ -44,7 +44,12 @@ memory_usage = []
 for x in range(10):
     mem_before = process_memory()
     start_time = time.perf_counter_ns()
-    program()
+    # Uncomment the program you want to run.
+    #program('./IRIS.csv',['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'species')
+    # program('WineQT.csv', ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
+    #        'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol'], 'quality')
+    # program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
+    #                           'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
     end_time = time.perf_counter_ns()
     mem_after = process_memory()
     execution_time.append(end_time - start_time)

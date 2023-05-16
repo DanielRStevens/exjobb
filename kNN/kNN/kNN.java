@@ -24,10 +24,9 @@ public class kNN {
         for (int i = 0; i < 10; i++) {
             long start_time = System.nanoTime();
             try {
-                //process("IRIS.csv", 4, new int[] {0,1,2,3,4});
+                process("IRIS.csv", 4, new int[] {0,1,2,3,4});
                 //process("WineQT.csv", 10, new int[] {0,1,2,3,4,5,6,7,8,9,10});
                 //process("weatherAUS.csv", -1, new int[]{2, 3, 4, 5, 6, 8, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22});
-                process("Original_data_with_more_rows.csv", 0, new int[]{3, 6, 7, 8});
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

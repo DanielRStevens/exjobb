@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="weka1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/kNN/out/production/kNN/weka.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

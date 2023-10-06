@@ -23,7 +23,7 @@ def program(file, columns, class_column):
     # Processing the dataset
     # Training the model
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=0)
+        X, y, test_size=0.2)
     knn_model = KNeighborsClassifier(n_neighbors=3)
     knn_model.fit(X_train, y_train)
     # Evaluating
@@ -48,8 +48,8 @@ for x in range(10):
     #        'petal_length', 'petal_width'], 'species')
     # program('WineQT.csv', ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
     #        'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol'], 'quality')
-    program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
-                               'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
+    # program('weatherAUS.csv', ['MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustSpeed', 'WindSpeed9am', 'WindSpeed3pm',
+    #                           'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm'], 'RainTomorrow')
     end_time = time.perf_counter_ns()
     execution_time.append(end_time - start_time)
     memory_usage.append(process_memory())
@@ -57,3 +57,4 @@ for x in range(10):
 
 print(f"The execution time is: {execution_time} nanoseconds")
 print(f"The memory consumption is : {memory_usage} bytes")
+17
